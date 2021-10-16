@@ -1,0 +1,38 @@
+ccnumber = str(input("Please enter your unique banks credit card"))
+
+def Luhnalgorithm(ccnumber):
+    list = [int(x) for x in str(ccnumber)]
+    for x in range(len(list)-2, -1, -2):
+        list[x] = list[x] * 2
+        if list[x] > 9:
+            list[x] = str(list[x])
+            list[x] = int(list[x][0]) + int(list[x][1])
+
+    if sum(list) % 10 == 0:
+        print('Your credit card is valid!')
+        if ccnumber[0] == '4':
+            print('You have a Visa Card')
+        elif ccnumber[0] == '5':
+            print('You have a Master Card')
+        elif ccnumber[0:2] == '37':
+            print('You have an American Express Card')
+        elif ccnumber[0] == '6':
+            print('You have a Discover Card')
+
+
+def digitchecker(ccnumber):
+    for x in ccnumber:
+        if ccnumber.isdigit():
+            return True
+        else:
+            print("Only numbers are allowed. Please try again!")
+            break
+
+
+def firstnumbers(ccnumber):
+    if ccnumber[0] == '4' or'5' or'6' or ccnumber[0:2] == '37':
+        return True
+
+
+if digitchecker(ccnumber) and firstnumbers(ccnumber):
+    Luhnalgorithm(ccnumber)
