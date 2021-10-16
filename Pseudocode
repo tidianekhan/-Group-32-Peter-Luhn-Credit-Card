@@ -1,1 +1,44 @@
+Pseudocode: ccnumber = credit card number
+
+Define Luhnalgorithm (ccnumber):
+	Make input credit card number a string
+Split into a list of ‘digits’
+Change strings back into integers
+
+Loop that starts with -2: range(-2, 0, -2)
+Doubles every number chosen in the loop
+For double digits it adds them up using 2D lists
+
+
+Sum up all the numbers
+If number is divisible by 10: 
+the number is valid
+Else:
+ it is not
+
+
+		Define digitchecker(ccnumber):
+			For each element in ccnumber
+			If the number is a digit:
+				Return True
+			Else:
+				Break
+		
+		Define firstnumbers(ccnumber):
+			If ccnumber starts with 4,5,6 or 37:
+				Return True
+			Else:
+				Break
+		
+	
+		Define cclength(ccnumber):
+			If credit card number is more or equal to 13 and less than or equal to 16:
+				Return True
+			Else:
+				Break
+
+
+		
+		If digitchecker(ccnumber) and firstnumbers(ccnumber) and cclength(ccnumber):
+			Luhnalgorithm(ccnumber)
 
