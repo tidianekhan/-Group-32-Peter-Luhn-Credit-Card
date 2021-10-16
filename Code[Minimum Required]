@@ -20,6 +20,8 @@ def Luhnalgorithm(ccnumber):
             print('You have an American Express Card')
         elif ccnumber[0] == '6':
             print('You have a Discover Card')
+    else:
+        print("Your credit card is invalid! Please try again.")
 
 
 def digitchecker(ccnumber):
@@ -38,5 +40,12 @@ def firstnumbers(ccnumber):
         print('Card must start with valid bank number of a recognized bank.')
 
 
-if digitchecker(ccnumber) and firstnumbers(ccnumber):
+def cclength(ccnumber):
+    if len(ccnumber) >= 13 and len(ccnumber)<= 16:
+        return True
+    else:
+        print("Card number must be between 13 and 16 digits long")
+
+if digitchecker(ccnumber) and firstnumbers(ccnumber) and cclength(ccnumber):
     Luhnalgorithm(ccnumber)
+
