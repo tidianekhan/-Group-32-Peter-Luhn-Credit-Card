@@ -12,3 +12,35 @@ for x in range(len(list)-2, -1, -2):
 print(list)
 if sum(list) % 10 == 0:
     print('valid')
+
+
+
+
+
+import string
+
+
+'''NEW IMPROVED CODE WITH BREAK CONDITION IF CREDIT CARD CONTAINS NO DIGITS'''
+
+
+
+ccnumber = str(input("Please enter your unique banks credit card"))
+for x in ccnumber:
+    if ccnumber.isdigit():
+        list = [int(x) for x in str(ccnumber)]
+        print(list)
+
+        for x in range(len(list) - 2, -1, -2):
+            list[x] = list[x] * 2
+            if list[x] > 9:
+                list[x] = str(list[x])
+                list[x] = int(list[x][0]) + int(list[x][1])
+
+        print(list)
+        if sum(list) % 10 == 0:
+            print('valid')
+    elif:
+        
+    else:
+        print("Only numbers are allowed. Please try again!")
+        break
