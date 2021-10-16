@@ -1,0 +1,8 @@
+def digitchecker(ccnumber):
+    for x in ccnumber:
+        if ccnumber.isdigit():
+            return True
+        else:
+            print("Only numbers are allowed. Please try again!")
+            break
+            
