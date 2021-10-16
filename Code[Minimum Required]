@@ -1,3 +1,5 @@
+import string
+
 ccnumber = str(input("Please enter your unique banks credit card"))
 
 def Luhnalgorithm(ccnumber):
@@ -32,6 +34,8 @@ def digitchecker(ccnumber):
 def firstnumbers(ccnumber):
     if ccnumber[0] == '4' or'5' or'6' or ccnumber[0:2] == '37':
         return True
+    else:
+        print('Card must start with valid bank number of a recognized bank.')
 
 
 if digitchecker(ccnumber) and firstnumbers(ccnumber):
