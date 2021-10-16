@@ -1,7 +1,11 @@
 import string
 
-ccnumber = str(input("Please enter your unique banks credit card"))
+#Ask user to input credit card number
+ccnumber = str(int(input("Please enter your unique banks credit card")))
 
+
+#Algorithm that checks the validity of the card provided it 
+#satisfies all conditions (We'll get to that later)
 def Luhnalgorithm(ccnumber):
     list = [int(x) for x in str(ccnumber)]
     for x in range(len(list)-2, -1, -2):
@@ -12,6 +16,7 @@ def Luhnalgorithm(ccnumber):
 
     if sum(list) % 10 == 0:
         print('Your credit card is valid!')
+        #Lets user know the company of their bank card
         if ccnumber[0] == '4':
             print('You have a Visa Card')
         elif ccnumber[0] == '5':
@@ -23,7 +28,7 @@ def Luhnalgorithm(ccnumber):
     else:
         print("Your credit card is invalid! Please try again.")
 
-
+#Condition to check the credit card number contains only numbers
 def digitchecker(ccnumber):
     for x in ccnumber:
         if ccnumber.isdigit():
@@ -32,20 +37,22 @@ def digitchecker(ccnumber):
             print("Only numbers are allowed. Please try again!")
             break
 
-
+# Condition to check whether the first digit(s) belong to a recognized bank
 def firstnumbers(ccnumber):
     if ccnumber[0] == '4' or'5' or'6' or ccnumber[0:2] == '37':
         return True
     else:
         print('Card must start with valid bank number of a recognized bank.')
 
-
+# Condition to check whether the length of the credit card number fits into the range.
 def cclength(ccnumber):
     if len(ccnumber) >= 13 and len(ccnumber)<= 16:
         return True
     else:
         print("Card number must be between 13 and 16 digits long")
 
+# If all conditions are satisfied then the Luhn Algorithm will run and return whether the card is valid or not.
 if digitchecker(ccnumber) and firstnumbers(ccnumber) and cclength(ccnumber):
     Luhnalgorithm(ccnumber)
+
 
